@@ -46,9 +46,17 @@ export const renderField = (
     case "email":
     case "password":
     case "number":
-      return <Input {...field} className="w-full" />;
+      return (
+        <Input {...field} placeholder={item.placeholder} className="w-full" />
+      );
     case "textarea":
-      return <Textarea {...field} className="w-full" />;
+      return (
+        <Textarea
+          {...field}
+          placeholder={item.placeholder}
+          className="w-full"
+        />
+      );
     case "select":
       return (
         <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -162,7 +170,7 @@ export default function Preview({ fields }: PropsType) {
               <FormItem>
                 <FormLabel>{item.label}</FormLabel>
                 <FormControl>{renderField(field, item)}</FormControl>
-                <FormDescription>this is description</FormDescription>
+                <FormDescription>{item.description}</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
