@@ -3,11 +3,7 @@
 import { UseFormReturn } from "react-hook-form";
 
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogFooter
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogFooter } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -79,6 +75,7 @@ export function AddFieldDialog({
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
+                    disabled={true}
                   >
                     <FormControl>
                       <SelectTrigger>
